@@ -29,3 +29,25 @@ fragment CourseFields on Course {
   }
 }
 ```
+
+## Variables
+
+```graphql
+query GetCourse2 ($course: ID!) {
+  getCourse(id: $course){
+   _id
+    title
+    people{
+      _id
+      name
+    }
+  }
+}
+```
+Requiere un objeto JSON como:
+
+```json
+{
+  "course": "5cb4b8ce75f954a0585f7be3"
+}
+```
