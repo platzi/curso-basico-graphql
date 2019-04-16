@@ -97,3 +97,25 @@ Requiere un objeto JSON como:
   "avatar": true
 }
 ```
+
+## Unions
+
+```graphql
+{
+  searchItems(keyword: "1"){
+    __typename
+    ... on Course {
+      title
+      description
+    }
+    ... on Monitor {
+      name
+      phone
+    }
+    ... on Student {
+      name
+      email
+    }
+  }
+}
+```
